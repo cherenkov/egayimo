@@ -13,34 +13,67 @@
 <body style='margin : 0px; overflow: hidden;'>
 
   <!-- <a-scene embedded arjs="debugUIEnabled:false;"> -->
-  <a-scene embedded arjs>
+  <a-scene embedded arjs="debugUIEnabled:false;">
       <a-assets>
-        <a-asset-item id="obj" src="./assets/aframe/strawberry.obj"></a-asset-item>
-        <a-asset-item id="mtl" src="./assets/aframe/strawberry.mtl"></a-asset-item>
+        <a-asset-item id="strawberry-obj" src="./assets/aframe/strawberry.obj"></a-asset-item>
+        <a-asset-item id="strawberry-mtl" src="./assets/aframe/strawberry.mtl"></a-asset-item>
         <a-asset-item id="sushi-obj" src="./assets/aframe/sushi.obj"></a-asset-item>
         <a-asset-item id="sushi-mtl" src="./assets/aframe/sushi.mtl"></a-asset-item>
+        <img id="txt-hint" src="./assets/img/hint.png">
       </a-assets>
 
     <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
     <a-marker preset="hiro">
       <!-- マーカーの場所に箱を置く（見やすいようにワイヤーフレーム表示） -->
-      <!-- <a-box position="0 0.5 0" wireframe="true"></a-box> -->
-      <a-text position="0 1 0" align="center" side="double" value="Now Interactable" scale="1 1 1"></a-text>
+      <a-image src="#txt-hint" side="double" width="3" height="3"></a-image>
     </a-marker>
 
     <a-marker preset="kanji">
-      <a-obj-model id="" src="#obj" mtl="#mtl" position="0 3 0" scale="3 3 3" rotation="0 0 0"
-        animation="property: rotation; to:0 360 0; dur:6000; loop: true;"
+      <a-obj-model id="" src="#sushi-obj" mtl="#sushi-mtl" position="0 1.5 0" scale="3 3 3" rotation="0 0 0"
+        animation="property: rotation; to:0 360 0; dur:8000; loop: true;"
       >
       </a-obj-model>
     </a-marker>
 
     <a-marker type="pattern" url="./assets/aframe/che.patt">
-      <a-obj-model id="" src="#sushi-obj" mtl="#sushi-mtl" position="0 3 0" scale="3 3 3" rotation="0 0 0"
-        animation="property: rotation; to:0 360 0; dur:6000; loop: true;"
+      <a-image src="#txt-hint" side="double" width="3" height="3"></a-image>
+    </a-marker>
+
+    <a-marker type="pattern" url="./assets/aframe/i.patt">
+      <a-obj-model id="" src="#strawberry-obj" mtl="#strawberry-mtl" position="0 0.2 0" scale="2 2 2" rotation="0 0 0"
+        animation="property: rotation; to:0 360 0; dur:8000; loop: true;"
       >
       </a-obj-model>
     </a-marker>
+
+    <a-marker type="pattern" url="./assets/aframe/chi.patt">
+      <a-obj-model id="" src="#strawberry-obj" mtl="#strawberry-mtl" position="0 0.2 0" scale="2 2 2" rotation="0 0 0"
+        animation="property: rotation; to:0 360 0; dur:8000; loop: true;"
+      >
+    </a-obj-model>
+    </a-marker>
+
+    <a-marker type="pattern" url="./assets/aframe/go.patt">
+      <a-obj-model id="" src="#strawberry-obj" mtl="#strawberry-mtl" position="0 0.2 0" scale="2 2 2" rotation="0 0 0"
+        animation="property: rotation; to:0 360 0; dur:8000; loop: true;"
+      >
+      </a-obj-model>
+    </a-marker>
+
+    <a-marker type="pattern" url="./assets/aframe/sushi.patt">
+      <a-obj-model id="" src="#sushi-obj" mtl="#sushi-mtl" position="0 1.5 0" scale="3 3 3" rotation="0 0 0"
+        animation="property: rotation; to:0 360 0; dur:8000; loop: true;"
+      >
+      </a-obj-model>
+    </a-marker>
+
+
+    <!-- <a-marker type="pattern" url="./assets/aframe/kakusin.patt">
+      <a-obj-model id="" src="#sushi-obj" mtl="#sushi-mtl" position="0 3 0" scale="3 3 3" rotation="0 0 0"
+        animation="property: rotation; to:0 360 0; dur:8000; loop: true;"
+      >
+      </a-obj-model>
+    </a-marker> -->
 
    
     <!-- AR用のカメラを置く -->
